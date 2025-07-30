@@ -80,4 +80,80 @@ Task	Status
 Upload + Index document(s) + Store vector DB	❌ Not yet
 User submits query → parsed → semantically matched → decision returned	❌ Not yet
 Swagger UI / Postman testing for all endpoints	🔶 Partial
-Error handling / vague query fallback	❌ Not yet
+Error handling / vague query fallback	❌ Not
+
+Tutorial for setup(cause I already have done setup ask gpt if it can be just run without setting up anything else)-
+🚀 1. Clone the Repository
+bash
+Copy
+Edit
+git clone https://github.com/<your-username>/<your-repo-name>.git
+cd <your-repo-name>
+⚠️ Everyone will be working on the main branch. Make sure you're on it:
+
+bash
+Copy
+Edit
+git checkout main
+🧪 2. Create a Virtual Environment
+bash
+Copy
+Edit
+# Windows
+python -m venv venv
+venv\Scripts\activate
+
+# macOS/Linux
+python3 -m venv venv
+source venv/bin/activate
+📦 3. Install Dependencies
+Install all the required Python packages:
+
+bash
+Copy
+Edit
+pip install -r requirements.txt
+If requirements.txt is not available, regenerate it with:
+
+bash
+Copy
+Edit
+pip freeze > requirements.txt
+🏁 4. Run the FastAPI App
+You can now start the FastAPI server:
+
+bash
+Copy
+Edit
+uvicorn app.main:app --reload
+Access the API at: http://127.0.0.1:8000
+Access the Swagger Docs at: http://127.0.0.1:8000/docs
+
+📂 Project Structure
+bash
+Copy
+Edit
+.
+├── app/
+│   ├── main.py              # FastAPI application
+│   └── modules/
+│       └── query_parser.py  # Custom logic for parsing queries
+├── requirements.txt         # List of Python dependencies
+├── README.md                # Project documentation
+💡 Useful Tips
+If uvicorn is not found, install it manually:
+
+bash
+Copy
+Edit
+pip install uvicorn
+If PyPDF2 or other modules are missing:
+
+bash
+Copy
+Edit
+pip install PyPDF2
+Always activate your virtual environment before running the app.
+
+chatgpt link-
+https://chatgpt.com/c/6881b5df-4b78-8001-8a0a-cfc057744eff
